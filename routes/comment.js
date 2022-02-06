@@ -1,15 +1,11 @@
 const { Router } = require("express");
 
-const { postComment } = require("../controllers/comment");
+const { postComment, getCommentByRecipe } = require("../controllers/comment");
 
 const router = Router();
 
-// router.get("/", getUser);
-
-// router.put("/:id", putUser);
+router.get("/:id", getCommentByRecipe);
 
 router.post("/", postComment);
-
-// router.delete("/", deleteUser);
 
 module.exports = router;
