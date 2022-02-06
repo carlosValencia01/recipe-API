@@ -6,7 +6,7 @@ const RecipeSchema = Schema({
   process: { type: String, required: true },
   image: { type: String, required: false },
   description: { type: String, required: false },
-  rate: { type: Double, required: false },
+  rate: { type: String, required: false },
   author_id: { type: String, required: true },
   category: { type: String, required: true },
 });
