@@ -11,6 +11,14 @@ const postComment = async (req, res) => {
   });
 };
 
+const getCommentByRecipe = async (req, res = response) => {
+  const { id } = req.params;
+
+  const comments = await Comment.find({ recipe_id: id });
+  res.json({ comments });
+};
+
 module.exports = {
   postComment,
+  getCommentByRecipe,
 };
