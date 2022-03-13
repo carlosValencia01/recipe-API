@@ -8,6 +8,7 @@ class Server {
     this.port = process.env.PORT;
     this.recipesPath = "/api/recipes";
     this.commentsPath = "/api/comments";
+    this.fbPath = "/api/fb";
 
     this.connectDB();
     this.middlewares();
@@ -30,6 +31,7 @@ class Server {
   routes() {
     this.app.use(this.commentsPath, require("../routes/comment"));
     this.app.use(this.recipesPath, require("../routes/recipe"));
+    this.app.use(this.fbPath, require("../routes/fb"));
   }
 
   listen() {
